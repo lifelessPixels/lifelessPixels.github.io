@@ -106,7 +106,7 @@
 
 @media print {
     .content {
-        padding: 0;
+        padding: 0.1em;
     }
 
     .control-panel {
