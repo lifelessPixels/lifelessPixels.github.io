@@ -1,0 +1,102 @@
+@import url(' https://fonts.cdnfonts.com/css/helvetica-neue-5 ');
+
+:root {
+    font-family: "Helvetica Neue", sans-serif;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 1em;
+}
+
+
+#sample-white,
+#sample-black {
+    display: none;
+}
+
+.control-panel {
+    margin-bottom: 2em;
+}
+
+.control-panel>* {
+    margin-bottom: 1em;
+}
+
+.control-panel textarea {
+    width: 100%;
+}
+
+.panel-buttons {
+    display: flex;
+    gap: 1em;
+}
+
+.card {
+    aspect-ratio: 2 / 3;
+    width: 10em;
+    border: 1px solid black;
+    border-radius: 1em;
+    border-style: dashed;
+    padding: 0.75em;
+    break-inside: avoid-page;
+    flex: 0 1 auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-black {
+    color: white;
+    background-color: black;
+}
+
+.card-text {
+    font-weight: bold;
+}
+
+.card-footer {
+    margin: -0.5em;
+    font-size: 0.75em;
+    opacity: 90%;
+    display: flex;
+    align-items: center;
+    gap: 0.25em;
+}
+
+.card-icon {
+    background: url("card_black.png");
+    background-size: cover;
+    width: 2em;
+    aspect-ratio: 1 / 1;
+}
+
+.card-black .card-icon {
+    background: url("card_white.png");
+    background-size: cover;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    max-width: 100%;
+    align-items: start;
+    margin-bottom: 2em;
+}
+
+@media print {
+    body {
+        padding: 0;
+    }
+
+    .control-panel {
+        display: none;
+        margin: 0;
+    }
+}

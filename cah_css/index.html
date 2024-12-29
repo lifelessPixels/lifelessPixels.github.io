@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>CAH generator</title>
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="control-panel">
+            <div class="panel-buttons">
+                <button id="add-white">Dodaj jedną białą</button>
+                <button id="add-black">Dodaj jedną czarną</button>
+            </div>
+            <textarea id="pasted" rows="4">Tu wklej wszystkie karty, które chcesz dodać.</textarea>
+            <div class="panel-buttons">
+                <button id="add-pasted-white">Dodaj wklejone jako białe</button>
+                <button id="add-pasted-black">Dodaj wklejone jako czarne</button>
+            </div>
+            <p>Aby wydrukować gotowe karty wciśnij Ctrl+P!</p>
+        </div>
+
+        <div id="sample-white" class="card card-white">
+            <p class="card-text" contenteditable></p>
+            <div class="card-footer">
+                <div class="card-icon"></div>
+                <p>Friends Edition</p>
+            </div>
+        </div>
+        <div id="sample-black" class="card card-black">
+            <p class="card-text" contenteditable></p>
+            <div class="card-footer">
+                <div class="card-icon"></div>
+                <p>Friends Edition</p>
+            </div>
+        </div>
+
+        <div id="cards-white" class="card-container"></div>
+        <div id="cards-black" class="card-container"></div>
+    </body>
+    <script src="script.js"></script>
+</html>
