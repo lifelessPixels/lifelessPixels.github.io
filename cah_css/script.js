@@ -10,6 +10,8 @@ let black_container = document.getElementById("cards-black");
 let pasted_textarea = document.getElementById("pasted");
 let focus_new = document.getElementById("focus-new");
 let remove_all = document.getElementById("remove-all");
+let download_json = document.getElementById("download-json");
+let download_anchor = document.getElementById("download-anchor");
 
 const cards_storage_key = "saved_cards";
 let load_cards = () => JSON.parse(window.localStorage.getItem(cards_storage_key) ?? "{ \"white\": [], \"black\": [] }");
@@ -117,6 +119,12 @@ document.addEventListener("DOMContentLoaded", () => {
             black_container.innerHTML = "";
             save_cards();
         }
+    });
+    download_json.addEventListener("click", () => {
+        let dataURL = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(cards));
+        download_anchor.setAttribute("href", dataURL);
+        download_anchor.setAttribute("download", "karty.json");
+        download_anchor.click();
     });
 });
 

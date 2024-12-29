@@ -23,7 +23,10 @@
             </div>
             <p>Aby wydrukować gotowe karty wciśnij Ctrl+P!</p>
             <p>Aby usunąć wybraną kartę, wciśnij ją prawym przyciskiem myszy i zatwierdź.</p>
-            <button id="remove-all">Usuń wszystkie karty</button>
+            <div class="panel-buttons">
+                <button id="remove-all">Usuń wszystkie karty</button>
+                <button id="download-json">Wyeksportuj karty jako JSON</button>
+            </div>
         </div>
 
         <div class="content">
@@ -45,6 +48,8 @@
             <div id="cards-white" class="card-container"></div>
             <div id="cards-black" class="card-container"></div>
         </div>
+
+        <a id="download-anchor"></a>
     </body>
     <script src="script.js"></script>
 </html>
