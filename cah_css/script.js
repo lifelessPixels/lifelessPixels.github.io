@@ -9,6 +9,7 @@ let white_container = document.getElementById("cards-white");
 let black_container = document.getElementById("cards-black");
 let pasted_textarea = document.getElementById("pasted");
 let focus_new = document.getElementById("focus-new");
+let remove_all = document.getElementById("remove-all");
 
 const cards_storage_key = "saved_cards";
 let load_cards = () => JSON.parse(window.localStorage.getItem(cards_storage_key) ?? "{ \"white\": [], \"black\": [] }");
@@ -109,6 +110,14 @@ document.addEventListener("DOMContentLoaded", () => {
     add_black.addEventListener("click", () => add_card_button("black"));
     add_pasted_white.addEventListener("click", () => add_pasted_button("white"));
     add_pasted_black.addEventListener("click", () => add_pasted_button("black"));
+    remove_all.addEventListener("click", () => {
+        if (confirm("Czy na pewno chcesz usunąć wszystkie karty? To działanie jest nieodwracalne!")) {
+            cards = { white: [], black: [] };
+            white_container.innerHTML = "";
+            black_container.innerHTML = "";
+            save_cards();
+        }
+    });
 });
 
 document.addEventListener("paste", function (e) {
