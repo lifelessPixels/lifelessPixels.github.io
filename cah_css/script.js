@@ -8,6 +8,7 @@ let sample_black = document.getElementById("sample-black");
 let white_container = document.getElementById("cards-white");
 let black_container = document.getElementById("cards-black");
 let pasted_textarea = document.getElementById("pasted");
+let focus_new = document.getElementById("focus-new");
 
 const cards_storage_key = "saved_cards";
 let load_cards = () => JSON.parse(window.localStorage.getItem(cards_storage_key) ?? "{ \"white\": [], \"black\": [] }");
@@ -66,7 +67,19 @@ let add_card_button = (type) => {
     let new_card = add_new_card(type);
 
     // generate node and append it to a container
-    generate_card_node(new_card);
+    let added_node = generate_card_node(new_card);
+
+    // focus new element
+    if (focus_new.checked) {
+        console.log("xddd");
+        added_node.scrollIntoView({ block: "center" });
+
+        let saved_outline = added_node.style.outline;
+        added_node.style.outline = "2px solid red";
+        setTimeout(() => {
+            added_node.style.outline = saved_outline;
+        }, 2500)
+    }
 }
 
 let add_pasted_button = (type) => {

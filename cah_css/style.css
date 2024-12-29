@@ -2,6 +2,7 @@
 
 :root {
     font-family: "Helvetica Neue", sans-serif;
+    scroll-behavior: smooth;
 }
 
 * {
@@ -9,7 +10,7 @@
     box-sizing: border-box;
 }
 
-body {
+.content {
     padding: 1em;
 }
 
@@ -21,6 +22,14 @@ body {
 
 .control-panel {
     margin-bottom: 2em;
+    position: sticky;
+    width: 100%;
+    top: 0;
+    background-color: white;
+    z-index: 1000;
+    padding: 1em;
+    border-bottom: 2px solid grey;
+    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.4);
 }
 
 .control-panel>* {
@@ -39,12 +48,13 @@ body {
 .card {
     aspect-ratio: 2 / 3;
     width: 10em;
-    border: 1px solid black;
+    outline: 1px solid black;
     border-radius: 1em;
-    border-style: dashed;
+    outline-style: dashed;
     padding: 0.75em;
     break-inside: avoid-page;
     flex: 0 1 auto;
+    user-select: none;
 
     display: flex;
     flex-direction: column;
@@ -91,7 +101,7 @@ body {
 }
 
 @media print {
-    body {
+    .content {
         padding: 0;
     }
 

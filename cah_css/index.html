@@ -12,6 +12,10 @@
                 <button id="add-white">Dodaj jedną białą</button>
                 <button id="add-black">Dodaj jedną czarną</button>
             </div>
+            <div>
+                <input id="focus-new" type="checkbox" checked>
+                <label for="focus-new">Automatycznie skocz do nowo dodanej karty.</label>
+            </div>
             <textarea id="pasted" rows="4">Tu wklej wszystkie karty, które chcesz dodać.</textarea>
             <div class="panel-buttons">
                 <button id="add-pasted-white">Dodaj wklejone jako białe</button>
@@ -20,23 +24,25 @@
             <p>Aby wydrukować gotowe karty wciśnij Ctrl+P!</p>
         </div>
 
-        <div id="sample-white" class="card card-white">
-            <p class="card-text" contenteditable></p>
-            <div class="card-footer">
-                <div class="card-icon"></div>
-                <p>Friends Edition</p>
+        <div class="content">
+            <div id="sample-white" class="card card-white">
+                <p class="card-text" contenteditable></p>
+                <div class="card-footer">
+                    <div class="card-icon"></div>
+                    <p>Friends Edition</p>
+                </div>
             </div>
-        </div>
-        <div id="sample-black" class="card card-black">
-            <p class="card-text" contenteditable></p>
-            <div class="card-footer">
-                <div class="card-icon"></div>
-                <p>Friends Edition</p>
+            <div id="sample-black" class="card card-black">
+                <p class="card-text" contenteditable></p>
+                <div class="card-footer">
+                    <div class="card-icon"></div>
+                    <p>Friends Edition</p>
+                </div>
             </div>
-        </div>
 
-        <div id="cards-white" class="card-container"></div>
-        <div id="cards-black" class="card-container"></div>
+            <div id="cards-white" class="card-container"></div>
+            <div id="cards-black" class="card-container"></div>
+        </div>
     </body>
     <script src="script.js"></script>
 </html>
